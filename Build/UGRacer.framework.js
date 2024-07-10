@@ -1994,13 +1994,13 @@ var tempI64;
 // === Body ===
 
 var ASM_CONSTS = {
-  7609376: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
- 7609437: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
- 7609501: function() {return Module.webglContextAttributes.powerPreference;},  
- 7609559: function() {Module['emscripten_get_now_backup'] = performance.now;},  
- 7609614: function($0) {performance.now = function() { return $0; };},  
- 7609662: function($0) {performance.now = function() { return $0; };},  
- 7609710: function() {performance.now = Module['emscripten_get_now_backup'];}
+  7627664: function() {return Module.webglContextAttributes.premultipliedAlpha;},  
+ 7627725: function() {return Module.webglContextAttributes.preserveDrawingBuffer;},  
+ 7627789: function() {return Module.webglContextAttributes.powerPreference;},  
+ 7627847: function() {Module['emscripten_get_now_backup'] = performance.now;},  
+ 7627902: function($0) {performance.now = function() { return $0; };},  
+ 7627950: function($0) {performance.now = function() { return $0; };},  
+ 7627998: function() {performance.now = Module['emscripten_get_now_backup'];}
 };
 
 
@@ -4446,6 +4446,11 @@ var ASM_CONSTS = {
   function _JS_SystemInfo_HasWebGL() 
   	{
   		return Module.SystemInfo.hasWebGL;
+  	}
+
+  function _JS_SystemInfo_IsMobile() 
+  	{
+  		return Module.SystemInfo.mobile;
   	}
 
   function _JS_UnityEngineShouldQuit() {
@@ -16145,6 +16150,7 @@ var asmLibraryArg = {
   "JS_SystemInfo_HasCursorLock": _JS_SystemInfo_HasCursorLock,
   "JS_SystemInfo_HasFullscreen": _JS_SystemInfo_HasFullscreen,
   "JS_SystemInfo_HasWebGL": _JS_SystemInfo_HasWebGL,
+  "JS_SystemInfo_IsMobile": _JS_SystemInfo_IsMobile,
   "JS_UnityEngineShouldQuit": _JS_UnityEngineShouldQuit,
   "JS_WebRequest_Abort": _JS_WebRequest_Abort,
   "JS_WebRequest_Create": _JS_WebRequest_Create,
@@ -17422,6 +17428,9 @@ var dynCall_viiiiiffii = Module["dynCall_viiiiiffii"] = createExportWrapper("dyn
 var dynCall_viffffii = Module["dynCall_viffffii"] = createExportWrapper("dynCall_viffffii");
 
 /** @type {function(...*):?} */
+var dynCall_viffffiii = Module["dynCall_viffffiii"] = createExportWrapper("dynCall_viffffiii");
+
+/** @type {function(...*):?} */
 var dynCall_vifiiii = Module["dynCall_vifiiii"] = createExportWrapper("dynCall_vifiiii");
 
 /** @type {function(...*):?} */
@@ -17519,9 +17528,6 @@ var dynCall_viiiiiiiijiiii = Module["dynCall_viiiiiiiijiiii"] = createExportWrap
 
 /** @type {function(...*):?} */
 var dynCall_viiiiiifiiiiii = Module["dynCall_viiiiiifiiiiii"] = createExportWrapper("dynCall_viiiiiifiiiiii");
-
-/** @type {function(...*):?} */
-var dynCall_viffffiii = Module["dynCall_viffffiii"] = createExportWrapper("dynCall_viffffiii");
 
 /** @type {function(...*):?} */
 var dynCall_vifiiiiii = Module["dynCall_vifiiiiii"] = createExportWrapper("dynCall_vifiiiiii");
@@ -18118,6 +18124,9 @@ var dynCall_d = Module["dynCall_d"] = createExportWrapper("dynCall_d");
 var dynCall_iiifiifii = Module["dynCall_iiifiifii"] = createExportWrapper("dynCall_iiifiifii");
 
 /** @type {function(...*):?} */
+var dynCall_fiif = Module["dynCall_fiif"] = createExportWrapper("dynCall_fiif");
+
+/** @type {function(...*):?} */
 var dynCall_iiiiiiffiiiiiiiiiffffiii = Module["dynCall_iiiiiiffiiiiiiiiiffffiii"] = createExportWrapper("dynCall_iiiiiiffiiiiiiiiiffffiii");
 
 /** @type {function(...*):?} */
@@ -18401,17 +18410,6 @@ function invoke_dii(index,a1,a2) {
   var sp = stackSave();
   try {
     return dynCall_dii(index,a1,a2);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0) throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_viffi(index,a1,a2,a3,a4) {
-  var sp = stackSave();
-  try {
-    dynCall_viffi(index,a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
@@ -18819,6 +18817,17 @@ function invoke_viiid(index,a1,a2,a3,a4) {
   var sp = stackSave();
   try {
     dynCall_viiid(index,a1,a2,a3,a4);
+  } catch(e) {
+    stackRestore(sp);
+    if (e !== e+0) throw e;
+    _setThrew(1, 0);
+  }
+}
+
+function invoke_viffi(index,a1,a2,a3,a4) {
+  var sp = stackSave();
+  try {
+    dynCall_viffi(index,a1,a2,a3,a4);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0) throw e;
